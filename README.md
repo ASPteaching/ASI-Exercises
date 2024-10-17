@@ -1,6 +1,8 @@
 # Advanced Statistical Inference-Exercises
+
 A repository with the coding solutions of some problems appearing in the Advanced Staistical Inference Course
 
 You can either clone the repository, download the pdfs or, if you prefer to watch it online use the following link
 
-[U1-R_exercises_Solutions.html](https://aspteaching.github.io/ASI-Exercises/U1-R_exercises_Solutions.html)
+[ClassExercises-Unit_1.2-Solutions_using_R.html](https://aspteaching.github.io/ASI-Exercises/ClassExercises-Unit_1.2-Solutions_using_R.html)
+[ClassExercises-Unit_1.2-Solutions_using_R.pdf](https://aspteaching.github.io/ASI-Exercises/ClassExercises-Unit_1.2-Solutions_using_R.pdf)
