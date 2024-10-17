@@ -4,5 +4,4 @@ A repository with the coding solutions of some problems appearing in the Advance
 
 You can either clone the repository, download the pdfs or, if you prefer to watch it online use the following link
 
-[ClassExercises-Unit_1.2-Solutions_using_R.html](https://aspteaching.github.io/ASI-Exercises/ClassExercises-Unit_1.2-Solutions_using_R.html)
-[ClassExercises-Unit_1.2-Solutions_using_R.pdf](https://aspteaching.github.io/ASI-Exercises/ClassExercises-Unit_1.2-Solutions_using_R.pdf)
+

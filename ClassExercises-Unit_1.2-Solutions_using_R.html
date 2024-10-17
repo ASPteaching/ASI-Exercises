@@ -468,10 +468,10 @@ P(\text { Type I error }) &amp; =P(|X-50|&gt;10 \mid p=0.5)=\\
 <p>The power function is obtained by expressing the power of the test as a function of the parameter’s values.</p>
 <p><span class="math display">\[
 \begin{aligned}
-P\left(\mathbb{x}\notin W \,\vert \, p\right) &amp; = P(|X-50| \leq 10 \mid p)=\\
-&amp; = P( 40 \leq X \leq 60 \mid p) = [\text {continuity correction}] = \\
-&amp; = P\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}} \leq Z \leq \frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right) \\
-&amp; =\left(\Phi\left(\frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right)-\Phi\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}}\right)\right)
+P\left(\mathbb{x}\in W \,\vert \, p\right) &amp; = 1- P(|X-50| \leq 10 \mid p)=\\
+&amp; = 1- P( 40 \leq X \leq 60 \mid p) = [\text {continuity correction}] = \\
+&amp; = 1-P\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}} \leq Z \leq \frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right) \\
+&amp; =1-\left(\Phi\left(\frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right)-\Phi\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}}\right)\right)
 \end{aligned}
 \]</span></p>
 <table class="caption-top table">
@@ -625,19 +625,28 @@ P\left(\mathbb{x}\notin W \,\vert \, p\right) &amp; = P(|X-50| \leq 10 \mid p)=\
 </ol>
 <section id="power-function-1" class="level2">
 <h2 class="anchored" data-anchor-id="power-function-1">Power function</h2>
-<p><span class="math display">\[
-F_{Y_{(n)}}(y) = (F_X(y))^{n} = \left( \frac{y}{\theta} \right)^n
+<p>Let <span class="math inline">\(W = \{\tilde X | max (X_1, ...,X_n)\leq 3/2\}\)</span></p>
+<p>The power function is defined as: <span class="math display">\[P_\theta(W) = P_\theta[\max (X_1, ...,X_n)\leq 3/2].\]</span> Recall the pdf of a uniform distribution in <span class="math inline">\((0,\theta)\)</span>: <span class="math display">\[
+P_\theta[X\leq x]=\frac x\theta,
+\]</span> and the distribution of <span class="math inline">\(\max(X_1,....,X_n)\)</span>: <span class="math display">\[
+P[Y_n=max(X_1,....,X_n)\leq y]=F_{Y_{(n)}}(y) = (F_X(y))^{n} = \left( \frac{y}{\theta} \right)^n
+\]</span> So that <span class="math display">\[
+\Pi(\theta) = P_\theta(W)= P_\theta\left( Y_{(n)} \leq \frac{3}{2}\right)= \left(\frac{3/2}{\theta}\right)^n
 \]</span></p>
-<p><span class="math display">\[
-\Pi(\theta) = P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= \left(\frac{1.5}{\theta}\right)^n
-\]</span></p>
-<p>if <span class="math inline">\(\theta \leq \frac{3}{2}\)</span> then <span class="math inline">\(Y_{(n)} \leq  \frac{3}{2}\)</span> and <span class="math inline">\(P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right) = 1 \rightarrow \Pi(\theta) = 1\)</span></p>
-<p>if <span class="math inline">\(\theta &gt; \frac{3}{2}\)</span> then <span class="math inline">\(P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= F_{Y_{(n)}}(\frac{3}{2}) =  \left(\frac{1.5}{\theta}\right)^n\)</span></p>
+<p>Here we must distinguish two possibilities:</p>
+<ul>
+<li><p>If <span class="math inline">\(\theta \leq \frac{3}{2}\)</span> then <span class="math inline">\(Y_{(n)} \leq  \frac{3}{2}\)</span> and <span class="math inline">\(P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right) = 1 \rightarrow \Pi(\theta) = 1\)</span></p></li>
+<li><p>If <span class="math inline">\(\theta &gt; \frac{3}{2}\)</span> then <span class="math inline">\(P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= F_{Y_{(n)}}(\frac{3}{2}) =  \left(\frac{1.5}{\theta}\right)^n\)</span></p></li>
+</ul>
 </section>
 <section id="size-of-the-procedure" class="level2">
 <h2 class="anchored" data-anchor-id="size-of-the-procedure">Size of the procedure</h2>
+<p>The size of the procedure is <span class="math display">\[
+\sup_{\theta \in \Theta_0} \eta(\theta) = \eta(2) = \left (\frac{3/2}2\right) ^n
+\]</span></p>
+<p>The test is consistent, that is, the size of the test tends t0 0 as <span class="math inline">\(n \to \infty\)</span></p>
 <p><span class="math display">\[
-\mbox{size } = \alpha = \Pi(2) = \left( \frac{3}{4} \right)^n
+\lim_{n\to \infty} \sup_{\theta \in \Theta_0} \eta(\theta) = 0
 \]</span></p>
 <div style="page-break-after: always;"></div>
 </section>

@@ -289,10 +289,10 @@ The power function is obtained by expressing the power of the test as a function
 
 $$
 \begin{aligned}
-P\left(\mathbb{x}\notin W \,\vert \, p\right) & = P(|X-50| \leq 10 \mid p)=\\
-& = P( 40 \leq X \leq 60 \mid p) = [\text {continuity correction}] = \\
-& = P\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}} \leq Z \leq \frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right) \\
-& =\left(\Phi\left(\frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right)-\Phi\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}}\right)\right)
+P\left(\mathbb{x}\in W \,\vert \, p\right) & = 1- P(|X-50| \leq 10 \mid p)=\\
+& = 1- P( 40 \leq X \leq 60 \mid p) = [\text {continuity correction}] = \\
+& = 1-P\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}} \leq Z \leq \frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right) \\
+& =1-\left(\Phi\left(\frac{60.5-100 p}{\sqrt{100 p(1-p)}}\right)-\Phi\left(\frac{39.5-100 p}{\sqrt{100 p(1-p)}}\right)\right)
 \end{aligned}
 $$
 
@@ -340,26 +340,42 @@ b) Calculate the size of the procedure.
 
 ## Power function
 
+Let $W = \{\tilde X | max (X_1, ...,X_n)\leq 3/2\}$
+
+The power function is defined as:
+$$P_\theta(W) = P_\theta[\max (X_1, ...,X_n)\leq 3/2].$$
+Recall the pdf of a uniform distribution in $(0,\theta)$:
 $$
-F_{Y_{(n)}}(y) = (F_X(y))^{n} = \left( \frac{y}{\theta} \right)^n
+P_\theta[X\leq x]=\frac x\theta,
+$$
+and the distribution of $\max(X_1,....,X_n)$:
+$$
+P[Y_n=max(X_1,....,X_n)\leq y]=F_{Y_{(n)}}(y) = (F_X(y))^{n} = \left( \frac{y}{\theta} \right)^n
+$$
+So that 
+$$
+\Pi(\theta) = P_\theta(W)= P_\theta\left( Y_{(n)} \leq \frac{3}{2}\right)= \left(\frac{3/2}{\theta}\right)^n
 $$
 
-$$
-\Pi(\theta) = P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= \left(\frac{1.5}{\theta}\right)^n
-$$
+Here we must distinguish two possibilities:
 
-
-if $\theta \leq \frac{3}{2}$ then $Y_{(n)} \leq  \frac{3}{2}$ and 
+- If $\theta \leq \frac{3}{2}$ then $Y_{(n)} \leq  \frac{3}{2}$ and 
 $P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right) = 1 \rightarrow \Pi(\theta) = 1$
 
-if $\theta > \frac{3}{2}$ then $P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= F_{Y_{(n)}}(\frac{3}{2}) =  \left(\frac{1.5}{\theta}\right)^n$
+- If $\theta > \frac{3}{2}$ then $P\left( Y_{(n)} \leq \frac{\frac{3}{2}}{\theta}\right)= F_{Y_{(n)}}(\frac{3}{2}) =  \left(\frac{1.5}{\theta}\right)^n$
 
 ## Size of the procedure
 
+The size of the procedure is 
 $$
-\mbox{size } = \alpha = \Pi(2) = \left( \frac{3}{4} \right)^n
+\sup_{\theta \in \Theta_0} \eta(\theta) = \eta(2) = \left (\frac{3/2}2\right) ^n
 $$
 
+The test is consistent, that is, the size of the test tends t0 0 as $n \to \infty$
+
+$$
+\lim_{n\to \infty} \sup_{\theta \in \Theta_0} \eta(\theta) = 0
+$$
 
 \newpage
 
